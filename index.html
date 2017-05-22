@@ -76,33 +76,48 @@ if(optimizely) {
     <div class="story">
       <div class="sidebar">
   <p><img src="./The Atlantic Customer Story - Heap _ Mobile and Web Analytics_files/stories_atlantic_logo.png"></p>
-  <p>The Atlantic, founded in 1857, is one of the fastest growing magazine brands across its print, digital, and events platforms and a leading voice in culture, business, and politics.</p>
-  <p><strong>Industry</strong>: Media, Publishing</p>
-  <p><strong>Use cases</strong>: Page engagement, advertising effectiveness</p>
+  <p>Airbnb is an online marketplace and hospitality service, enabling people to lease or rent short-term lodging including vacation rentals, apartment rentals, homestays, hostel beds, or hotel rooms. Airbnb connects people to unique travel experiences, at any price point, in more than 33,000 cities and 192 countries.</p>
+  <p><strong>Industry</strong>: Travel, Hospitality</p>
+  <p><strong>Use cases</strong>: Funnel analysis, Categorized User Querying, Scroll Tracking, AWS S3 Configuration, Targeting Host Preferences</p>
 </div>
 <div class="story-content">
   <blockquote>
-    <p class="quote-content">We’ve closed the feedback loop to the point that there isn’t a feedback loop anymore.</p>
-    <p class="quote-name">— Jen Sun, Product Manager at The Atlantic</p>
+    <p class="quote-content">We translate the customer's 'voice' into a language more suitable for decision-making</p>
+    <p class="quote-name">— Riley Newman, Director of Data Science at Airbnb</p>
   </blockquote>
 
-  <p>Jen Sun is a Product Manager at The Atlantic whose team develops and produces The Atlantic’s sponsored content. With user friendly tools, Heap enables Jen’s team to focus on producing the best articles, videos as well as infographics and validate that this content results in advertiser engagement.</p>
+  <p>Riley Newman is the Director of Data Science at Airbnb focusing on a centralized organization embedded in cross-functional project groups, leveraging cutting-edge infrastructure and tools, and drawing from a common warehouse that would serve as their single source of truth.</p>
 
-  <h3>Missing page engagement metrics</h3>
+  <h3>Funnel Analysis</h3>
 
-  <p>The Atlantic relies on a collection of tools including Omniture, SimpleReach and Moat Analytics to track a variety of metrics such as page views and time on site, but was missing page engagement metrics that explain how users interact with sponsored content on a granular level. The need for detailed user-level behavior became increasingly important as Jen’s team continued to develop more complex widgets and interactive content for their articles.</p>
+  <p>Airbnb’s users love the platform not only due to the ease of booking, but due to the high number and wide variety of spaces available to rent. By utilizing Heaps’ <a href="https://docs.heapanalytics.com/docs/funnel">funnels</a>, they can optimize the process the booking process for users or potential hosts go through as they list their space. </p>
 
-  <h3>The most intuitive analytics platform</h3>
+  <p>By using funnels, Airbnb can figure out where and when their losing users. They can dig deeper and compare conversion rates between user segments. When initially searching for a place to rent, are the fields “anywhere”, “anytime” “# of guests” an effective process to book? How many users have spent a large amount of activity in “window shopping” places to rent versus booking? These questions can lead to process optimization using Heap’s funnels.</p>
 
-  <p>Jen explored a number of other analytics tools to address this requirement, but Heap was the only platform that had a truly intuitive user interface that program managers at The Atlantic could use without having to go through the development team. Other products required developers to insert JavaScript event listeners to track user behavior, which was a painstaking and inefficient process. Using Heap’s Event Visualizer, the sponsored content team is able to define events in a simple point-and-click manner without ever having to write tracking code. As a result, non-technical users are empowered to define events and perform analysis independent of development resources.</p>
+  <h3>Categorizing User Querying</h3>
 
-  <p><img src="./The Atlantic Customer Story - Heap _ Mobile and Web Analytics_files/stories_atlantic_visualizer.png"></p>
+  <p>Visitors have the option of researching rentals using Airbnb as a registered user and they can start tracking their actions or as an anonymous user which might indicate passive browsing. It is difficult to measure conversion rates on anonymous users. Heap generates a random unique user ID and stores it in a cookie, or on iOS, in NSUserDefaults. These users will appear in the list view and are known as anonymous users. With Heap’s <a href="https://docs.heapanalytics.com/docs/using-identify">identify API</a>, Airbnb can start tracking their users to analyze which featured contents have proved to be very popular and which features aren’t receiving enough user action. <a href="https://docs.heapanalytics.com/docs/schema">Heap SQL</a> can measure metrics such as the average time on site to analyze how long user retention has been verified within Airbnb.</p>
 
-  <h3>Retroactive analysis</h3>
+  <h3>Scroll Tracking</h3>
 
-  <p>For The Atlantic team, Heap offers peace of mind due to its unique retroactive analysis capability. Jen's team no longer has to worry about having the data they need as Heap automatically captures all user interactions from the day of installation. As her team began to use Heap, Heap was deployed to all sponsored content and collected all user behavior even before performing any analysis. At one point, a client requested more detailed engagement data and The Atlantic team was able to leverage the value of Heap’s retroactive analysis to present a key metric to the client although it was not an initially measured KPI.</p>
+  <p>Airbnb features content within a few categories on their website. These categories include recommended listings, just booked, viewed by your friends, homes, and featured destinations. They can carefully architect the structure of <a href="https://docs.heapanalytics.com/docs/scroll-tracking">scroll tracking</a> to conduct content analysis by implementing Heap’s client-side interaction code. By capturing more granular scroll data, Airbnb can determine where their users start to drop off by browsing their featured content. They can start by firing events based on specific impressions of their featured destinations towards the footer of the homepage.</p>
 
-  <p>Above all, Heap has closed the feedback loop from question to answer. Previously, the sponsored content team needed to formulate a question to analyze, deploy code to track data, validate the implementation, and wait for information to trickle in. With Heap, answers can be provided immediately after questions are asked. According to Jen, “we’ve closed the feedback loop to the point that there isn’t a feedback loop anymore.”</p>
+  <p><img src="./scroll_tracking.png"></p>
+
+  <h3>AWS S3 Configuration</h3>
+
+  <p>Airbnb is using Amazon Simple Storage Service (Amazon S3) to house backups and static files, including 10 terabytes of user pictures. Once enabling data exports within Heap environments, Airbnb can <a href="https://docs.heapanalytics.com/docs/aws-s3-configuration">configure AWS S3</a> with Heap to add an additional layer of analysis since Heap offers the ability to export information for Airbnb’s data pipeline.</p>
+
+  <h3>Targeting Host Preferences</h3>
+
+  <p>Combining each of Heap’s features leads to a process that concludes with definitive analysis results. For example, Airbnb can begin to ask the question on how hosts determine their preferences and similar patterns that appear. Determining check-in and check-out ranges can be utilized to find a correlation between popular days of the week and peaks in price points. Using Heap to determine a roadmap on defining the events, running queries, and creating reports will lead to an optimized process for comparing user events.</p>
+
+  <h4>Resources</h4>
+  <a href="https://medium.com/airbnb-engineering/at-airbnb-data-science-belongs-everywhere-917250c6beba">Riley Newman's "At Airbnb, Data Science Belongs Everywhere"</a>
+
+  <a href="https://aws.amazon.com/solutions/case-studies/airbnb/">Amazon Web Services' Airbnb Case Study</a>
+
+
 </div>
 
       <div class="clearfix"></div>
